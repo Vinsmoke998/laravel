@@ -1,5 +1,5 @@
 <?php
-require_once 'model/database.php';
+require_once '../models/database_con.php';
 
 if($user->is_loggedin()!="")
 {
@@ -14,7 +14,7 @@ if(isset($_POST['btn-login']))
   
  if($user->login($uname,$umail,$upass))
  {
-  $user->redirect('home.php');
+  $user->redirect('../home.php');
  }
  else
  {
@@ -27,6 +27,7 @@ if(isset($_POST['btn-login']))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login : cleartuts</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css"  />
 </head>
 <body>
@@ -57,7 +58,7 @@ if(isset($_POST['btn-login']))
                 </button>
             </div>
             <br />
-            <label>Don't have account yet ! <a href="sign-up.php">Sign Up</a></label>
+            <label>Don't have account yet ! <a href="v_registration.php">Sign Up</a></label>
         </form>
        </div>
 </div>

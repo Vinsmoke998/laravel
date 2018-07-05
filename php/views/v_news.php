@@ -1,3 +1,7 @@
+<?php
+require_once ('controllers/c_news.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,7 @@
     {
     ?>
     <div class = "news" >
-    <img src="img/<?php echo $n->images ?>" width = "150px" height = "200px" />
+    <img src="public/img/<?php echo $n->images ?>" width = "350px" height = "400px" />
     <h4><a href = "shownewsdetails.php?id = <?php echo $n->id ?>"> <?php echo $n->title ?></a></h4>
     <p><?php echo $n->brief ?></p>
     </div>

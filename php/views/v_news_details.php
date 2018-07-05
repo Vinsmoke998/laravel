@@ -11,7 +11,7 @@ require_once ('controllers/c_news.php');
 </head>
 <body>
 <div class = "news_details">
-<h3><?php echo $news->content ?></p>
+<p><?php echo $news->content ?></p>
 </div>    
 </body>
 </html>

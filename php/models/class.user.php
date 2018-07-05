@@ -1,10 +1,10 @@
 <?php
-require_once ('database.php');
-class USER extends database
+require_once ('database_con.php');
+class USER extends database_con
 {
-    private $db;
+    public $db;
  
-    function __construct($_dbh)
+    public function __construct($_dbh)
     {
       $this->db = $_dbh;
     }
@@ -35,7 +35,8 @@ class USER extends database
     {
        try
        {
-          $stmt = $this->db->prepare("SELECT * FROM users WHERE username=:uname OR email=:umail LIMIT 1");
+          
+          $stmt = $this->db->prepare("SELECT * FROM users WHERE username=:uname OR useremail=:umail LIMIT 1");
           $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
           $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
           if($stmt->rowCount() > 0)

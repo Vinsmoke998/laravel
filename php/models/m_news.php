@@ -1,8 +1,8 @@
 <?php
-require_once ('database.php');
-class M_news extends database 
+require_once ('database_con.php');
+class M_news extends database_con 
 {
-    public function shownews()
+    public function shownews2()
     {
         $sql = "select * from news";
         $this->setQuery($sql);
