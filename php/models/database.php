@@ -5,7 +5,7 @@ class database{
     public $_cursor = NULL;        
     
     public function database() {
-        $this->_dbh = new PDO('mysql:host=localhost; dbname=','root','');
+        $this->_dbh = new PDO('mysql:host=mysql; dbname=test','root','123456');
         $this->_dbh->query('set names "utf8"');
     }
     
@@ -72,4 +72,6 @@ class database{
         $this->_dbh = NULL;
     }
 }
+include_once 'class.user.php';
+$user = new USER($_dbh);
 ?>  
